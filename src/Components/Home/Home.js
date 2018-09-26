@@ -1,13 +1,14 @@
 import React from 'react';
 import logo from './../Img/logo.png';
 import Aux from '../../hoc/Aux';
+import styles from './Home.css';
 
 
-const Home = (props) => { 
+const Home = ( props ) => { 
     return(
      <Aux>
-        <img src={logo} alt='logo' width='500' height='500' />
-        <button onclick = {props.click}>Continue</button>
+        <img className= { styles.logo }  src= { logo } alt='logo' width='500' height='500' />
+        <button className= { styles.Button} onclick = { props.click }>Continue</button>
      </Aux>
     );
     }
