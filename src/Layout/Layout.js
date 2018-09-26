@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import Home from './Components/Home/Home';
 import Aux from './hoc/Aux';
 
-class App extends Component {
+class Layout extends Component {
   render() {
     return (
       <Aux>
-        <Home/>
+       <p>Navbar</p>
+       <p>Login</p>
+       <p>Search for restaurant</p>
       </Aux>
     );
   }
 }
 
-export default App;
+export default Layout;
