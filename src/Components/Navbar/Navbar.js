@@ -1,15 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import logo from './../Img/logo.png';
+import styles from './Navbar.css';
+import Root from '../../hoc/Root';
 
 const Navbar = () => {
     return(
-      <nav>
-        <ul>
-          <li><Link to= {'/'}>Home</Link></li>
-          <li><Link to= {'/Layout'}>Layout</Link></li>
-          <li><Link to= {'/Login'}>Login</Link></li>
-        </ul>
-      </nav>
+    <Root>
+        <nav className= { styles.nav }>
+          <img className= { styles.logo }src= { logo } alt='logo'  />
+             <NavLink className= { styles.NavLink} to= {'/'}>Home</NavLink>
+             <NavLink  className= { styles.NavLink} to= {'/Login'}>Login</NavLink>
+         </nav>
+    </Root>
     );
 }
 
