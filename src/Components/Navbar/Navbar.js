@@ -1,11 +1,11 @@
 import React from 'react';
-import Aux from '../../hoc/Aux';
+import Root from '../../hoc/Root';
 
 const Navbar = () => {
     return(
-       <Aux>
+       <Root>
           navitems
-       </Aux>
+       </Root>
     );
 }
 
