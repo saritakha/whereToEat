@@ -16,9 +16,8 @@ class App extends Component {
     return (
      <BrowserRouter>
       <div>
-       <Route  path= '/' component= {Home}>
-         <Route path= 'Layout' component= {Layout}/>
-       </Route>
+       <Route exact= {true} path= '/' component= {Home}/>
+       <Route path= '/Layout' component= {Layout}/>
       </div>
      </BrowserRouter>
     );
