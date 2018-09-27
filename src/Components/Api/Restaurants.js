@@ -46,8 +46,11 @@ export default class Restaurants extends Component{
       <div>
         {restaurants.map(data =>
           <ul key={data.name}>
-            <li>Restaurant:{data.name}</li>
-            <li>Rating: {data.rating}</li>
+            <li>{data.name}</li>
+            <li>{data.vicinity}</li>
+            <li>{data.rating}/5</li>
+            <li><img src={data.icon} alt="Restaurant picture"/></li>
+
           </ul>
         )}
       </div>
