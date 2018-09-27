@@ -7,6 +7,7 @@ export default class Restaurants extends Component{
       restaurants: [],
       isLoading: false,
       error: null,
+      index: 0
     }
   }
 
@@ -34,7 +35,8 @@ export default class Restaurants extends Component{
 
   render(){
     const {restaurants, isLoading, error} = this.state;
-
+    const restaurant = restaurants[this.state.index]
+    console.log(restaurants);
     if(isLoading){
       return <p>Loading</p>
     }
@@ -42,17 +44,17 @@ export default class Restaurants extends Component{
       return <p>{error.message}</p>
     }
 
+    if(restaurants.length===0) return <div>loading</div>
     return(
       <div>
-        {restaurants.map(data =>
-          <ul key={data.name}>
-            <li>{data.name}</li>
-            <li>{data.vicinity}</li>
-            <li>{data.rating}/5</li>
-            <li><img src={data.icon} alt="Restaurant picture"/></li>
-
-          </ul>
-        )}
+        <button className='button' onClick={() => this.setState({index:this.state.index+1})}>No</button>
+        <button className='button' onClick={() => this.setState({index:this.state.index+1})}>Yiss</button>
+        <ul>
+          <li>{restaurant.name}</li>
+          <li>{restaurant.vicinity}</li>
+          <li>{restaurant.rating}/5</li>
+          <li><img src={restaurant.icon} alt="Restaurant picture"/></li>
+        </ul>
       </div>
     )
   }
