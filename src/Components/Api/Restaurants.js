@@ -14,7 +14,7 @@ export default class Restaurants extends Component{
     this.setState({
       isLoading: true
     })
-    fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=60.21749913,24.8064967&radius=500&type=restaurant&key=AIzaSyDGgNbzA8m2lzd9ijxaGPhmoe-oVTr7nDk')
+    fetch('https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=60.21749913,24.8064967&radius=500&type=restaurant&key=AIzaSyDGgNbzA8m2lzd9ijxaGPhmoe-oVTr7nDk')
     .then(response => {
       if(response.ok){
         return response.json()
