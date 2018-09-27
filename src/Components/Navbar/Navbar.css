@@ -1,7 +1,11 @@
 
+.nav {
+    background-color: #d0d9e8;
+}
+
 .nav .logo {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 150px;
     padding: 15px;
 }
 
@@ -9,7 +13,7 @@
    float: right;
    margin: 15px;
    text-decoration: none;
-   font-size: 20px;
+   font-size: 17px;
 }
 
 .nav .NavLink:hover {

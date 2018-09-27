@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Home from './Components/Home/Home';
 import { BrowserRouter , Route } from 'react-router-dom'
 import Restaurants from './Components/Api/Restaurants';
+import Main from './Components/Main/Main';
+
 class App extends Component {
   // constructor(props){
   //   super(props);
@@ -17,6 +19,7 @@ class App extends Component {
        <div>
          <Route exact= {true} path= '/' component= {Home}/>
          <Route path= '/Restaurants' component= {Restaurants}/>
+         <Route path= '/Main' component= {Main}/>
       </div>
      </BrowserRouter>
     );

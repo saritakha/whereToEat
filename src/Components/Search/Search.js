@@ -1,16 +1,40 @@
-import React from 'react';
+import React, {Component} from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from './Search.css';
+import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
 
-const Search = () => {
+class Search extends Component{
+    state = {
+        query: '',
+        redirect: false
+    }
+
+    handleInputChange = () => {
+        this.setState({
+            query: this.search.value
+        })
+    }
+
+    render(){ 
     return(
-        <form className= {styles.form}>
-          <label>
-             Search for restaurant
-               <input type="text" name="name" />
-          </label>
-         <input type="submit" value="Submit" />
-        </form>
-    )
+       
+<div>
+  <FormGroup className= { styles.form} >
+  <InputGroup>
+    <FormControl
+        placeholder= 'Input your location here.....'
+        ref= {input => this.search = input}
+        onChange= { this.handleInputChange }
+    />
+  <InputGroup.Addon>
+   <NavLink  to= {'/Main'}><Glyphicon glyph="search"></Glyphicon></NavLink>
+  </InputGroup.Addon>
+</InputGroup>
+</FormGroup>
+</div>
+)
+    
+    }
 }
 
 export default Search;

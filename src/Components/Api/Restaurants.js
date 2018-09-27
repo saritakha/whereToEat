@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Main from '../Main/Main';
 
 export default class Restaurants extends Component{
   constructor(){
@@ -48,9 +49,9 @@ export default class Restaurants extends Component{
     return(
       <div>
         <button className='button' onClick={() => this.setState({index:this.state.index+1})}>No</button>
-        <button className='button' onClick={() => this.setState({index:this.state.index+1})}>Yiss</button>
+        <button className='button' onClick={() => this.setState({index:this.state.index+1})}>Yes</button>
         <ul>
-          <li>{restaurant.name}</li>
+          <li><Main name= {restaurant.name}/></li>
           <li>{restaurant.vicinity}</li>
           <li>{restaurant.rating}/5</li>
           <li><img src={restaurant.icon} alt="Restaurant picture"/></li>
