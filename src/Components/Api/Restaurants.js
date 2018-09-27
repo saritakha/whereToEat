@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Restaurants extends React.Component{
+export default class Restaurants extends Component{
   constructor(){
     super();
     this.state={

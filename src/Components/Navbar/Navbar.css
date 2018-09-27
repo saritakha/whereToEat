@@ -1,13 +1,8 @@
 
-.nav {
-    background-color: grey;
-    padding: 10px;
-    }
-
 .nav .logo {
-    height: 70px;
-    width: 90px;
-    padding: 7px;
+    height: 100px;
+    width: 100px;
+    padding: 15px;
 }
 
 .nav .NavLink {
