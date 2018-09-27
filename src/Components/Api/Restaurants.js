@@ -47,8 +47,8 @@ export default class Restaurants extends Component{
     if(restaurants.length===0) return <div>loading</div>
     return(
       <div>
-        <button className='button' onClick={() => this.setState({index:this.state.index+1})}>No</button>
-        <button className='button' onClick={() => this.setState({index:this.state.index+1})}>Yiss</button>
+        <button className='button' onClick={() => this.setState({index:this.state.index+1})}>No, show me another place</button>
+        <button className='button' onClick={() => this.setState({index:this.state.index+1})}>Get me directions!</button>
         <ul>
           <li>{restaurant.name}</li>
           <li>{restaurant.vicinity}</li>
