@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import styles from './Restaurants.css';
 export default class Restaurants extends Component{
   constructor(){
     super();
@@ -33,6 +33,14 @@ export default class Restaurants extends Component{
     }))
   }
 
+
+  handleClick = () => {
+    window.location.href = "http://localhost:3000/search";
+  }
+  AddToFav = () => {
+    alert("Added to favourites!");
+  }
+
   render(){
     const {restaurants, isLoading, error} = this.state;
     const restaurant = restaurants[this.state.index]
@@ -48,7 +56,8 @@ export default class Restaurants extends Component{
     return(
       <div>
         <button className='button' onClick={() => this.setState({index:this.state.index+1})}>No, show me another place</button>
-        <button className='button' onClick={() => this.setState({index:this.state.index+1})}>Get me directions!</button>
+        <button className='button' onClick={() => {this.handleClick()}}>Get me directions!</button>
+        <button className='button' onClick={() => {this.AddToFav()}}>Add to favourites</button>
         <ul>
           <li>{restaurant.name}</li>
           <li>{restaurant.vicinity}</li>
