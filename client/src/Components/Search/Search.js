@@ -11,14 +11,22 @@ const Search = () => {
         <label>
           Search for restaurant
           <input type="text" name="name" />
+
         </label>
         <input type="submit" value="Submit" />
+        <button>
+          <a href="http://localhost:3000/restaurants">
+            Where to eat?
+          </a>
+        </button>
       </form>
+
       <button>
         <a href="https://www.google.com/maps/dir/?api=1&origin=60.1689709,24.9556654&destination=60.206647,24.828305">
           Get directions
         </a>
       </button>
+
     </div>
   );
 };
