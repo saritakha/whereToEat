@@ -36,13 +36,16 @@ export default class Restaurants extends Component{
   }
 
 
-  handleClick = () => {
-    window.location.href = "http://localhost:3000/search";
+  handleClick = (name, vic) => {
+    console.log(name);
+    window.location.href = "https://www.google.com/maps/dir/?api=1&origin=60.21749913,24.8064967&destination="+name+", +"+vic;
   }
   AddToFav = () => {
     alert("Added to favourites!");
   }
-
+  test = () => {
+    alert("Added to favourites!");
+  }
   render(){
     const {restaurants, isLoading, error} = this.state;
     const restaurant = restaurants[this.state.index]
@@ -62,7 +65,7 @@ export default class Restaurants extends Component{
         <button className='button' onClick={() => this.setState({index:this.state.index+1})}>Yes</button>
 =======
         <button className='button' onClick={() => this.setState({index:this.state.index+1})}>No, show me another place</button>
-        <button className='button' onClick={() => {this.handleClick()}}>Get me directions!</button>
+        <button className='button' onClick={() => {this.handleClick(restaurant.name, restaurant.vicinity)}}>Get me directions!</button>
         <button className='button' onClick={() => {this.AddToFav()}}>Add to favourites</button>
 >>>>>>> ebcd37e2d7e652a7af74a965641f9cf77fc9ba97:client/src/Components/Api/Restaurants.js
         <ul>
