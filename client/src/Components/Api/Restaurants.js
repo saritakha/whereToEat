@@ -60,14 +60,9 @@ export default class Restaurants extends Component{
     if(restaurants.length===0) return <div>loading</div>
     return(
       <div>
-<<<<<<< HEAD:src/Components/Api/Restaurants.js
-        <button className='button' onClick={() => this.setState({index:this.state.index+1})}>No</button>
-        <button className='button' onClick={() => this.setState({index:this.state.index+1})}>Yes</button>
-=======
         <button className='button' onClick={() => this.setState({index:this.state.index+1})}>No, show me another place</button>
         <button className='button' onClick={() => {this.handleClick(restaurant.name, restaurant.vicinity)}}>Get me directions!</button>
         <button className='button' onClick={() => {this.AddToFav()}}>Add to favourites</button>
->>>>>>> ebcd37e2d7e652a7af74a965641f9cf77fc9ba97:client/src/Components/Api/Restaurants.js
         <ul>
           <li><Main name= {restaurant.name}/></li>
           <li>{restaurant.vicinity}</li>
