@@ -57,10 +57,7 @@ export default class Restaurants extends Component {
   handleClick = (name, vic) => {
     console.log(name);
     window.location.href =
-      "https://www.google.com/maps/dir/?api=1&origin=60.21749913,24.8064967&destination=" +
-      name +
-      ", +" +
-      vic;
+      "https://www.google.com/maps/dir//" + name + ", +" + vic;
   };
   AddToFav = () => {
     alert("Added to favourites!");
@@ -111,7 +108,7 @@ export default class Restaurants extends Component {
             this.handleClick(restaurant.name, restaurant.vicinity);
           }}
         >
-          Get me directions!
+          Get me directions from anywhere!
         </button>
         <button
           className="button"
