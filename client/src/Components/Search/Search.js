@@ -20,7 +20,7 @@ const Search = () => {
         onChange= { this.handleInputChange }
     />
   <InputGroup.Addon>
-   <NavLink  to= {'/Main'}><Glyphicon glyph="search"></Glyphicon></NavLink>
+   <NavLink  to= {'/Restaurants'}><Glyphicon glyph="search"></Glyphicon></NavLink>
   </InputGroup.Addon>
 </InputGroup>
 </FormGroup>

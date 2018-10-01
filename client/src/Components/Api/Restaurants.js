@@ -64,7 +64,7 @@ export default class Restaurants extends Component{
         <button className='button' onClick={() => {this.handleClick(restaurant.name, restaurant.vicinity)}}>Get me directions!</button>
         <button className='button' onClick={() => {this.AddToFav()}}>Add to favourites</button>
         <ul>
-          <li><Main name= {restaurant.name}/></li>
+          <li> {restaurant.name}/></li>
           <li>{restaurant.vicinity}</li>
           <li>{restaurant.rating}/5</li>
           <li><img src={restaurant.icon} alt="Restaurant picture"/></li>
