@@ -15,8 +15,8 @@ const Search = () => {
         <input type="submit" value="Submit" />
       </form>
       <button>
-        <a href="http://maps.google.com/maps?daddr=60.18009011393016,24.911799430847168">
-          Map
+        <a href="https://www.google.com/maps/dir/?api=1&origin=60.1689709,24.9556654&destination=60.206647,24.828305">
+          Get directions
         </a>
       </button>
     </div>
