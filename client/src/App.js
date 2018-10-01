@@ -3,7 +3,6 @@ import Home from './Components/Home/Home';
 import { BrowserRouter , Route } from 'react-router-dom'
 import Restaurants from './Components/Api/Restaurants';
 import Login from './Components/Login/Login';
-import Main from './Components/Main/Main';
 
 class App extends Component {
   // constructor(props){
@@ -41,7 +40,6 @@ class App extends Component {
        <div>
          <Route exact= {true} path= '/' component= { Home }/>
          <Route path= '/Restaurants' component= { Restaurants }/>
-         <Route path= '/Main' component= { Main }/>
          <Route path= '/Login' component= { Login }/>
       </div>
      </BrowserRouter>

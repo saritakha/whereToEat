@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Main from '../Main/Main';
-
 import styles from './Restaurants.css';
+import Navbar from '../Navbar/Navbar';
+
 export default class Restaurants extends Component{
   constructor(){
     super();
@@ -60,15 +60,19 @@ export default class Restaurants extends Component{
     if(restaurants.length===0) return <div>loading</div>
     return(
       <div>
+        <Navbar/>
         <button className='button' onClick={() => this.setState({index:this.state.index+1})}>No, show me another place</button>
         <button className='button' onClick={() => {this.handleClick(restaurant.name, restaurant.vicinity)}}>Get me directions!</button>
         <button className='button' onClick={() => {this.AddToFav()}}>Add to favourites</button>
-        <ul>
-          <li> {restaurant.name}/></li>
-          <li>{restaurant.vicinity}</li>
-          <li>{restaurant.rating}/5</li>
-          <li><img src={restaurant.icon} alt="Restaurant picture"/></li>
-        </ul>
+
+               <div className={styles.circle}>
+                
+                  <p> {restaurant.name}</p>
+                  <p>{restaurant.vicinity}</p>
+                  <p>Rating:{restaurant.rating}/5</p>
+                  <img src={restaurant.icon} alt="Restaurant picture"/>
+                
+               </div>
       </div>
     )
   }
