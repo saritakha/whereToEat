@@ -7,14 +7,15 @@
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "client": "cd client && yarn start",
     "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
   "dependencies": {
     "chalk": "^2.4.1",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "yarn-install": "^1.0.0"
   },
   "devDependencies": {
-    "concurrently": "^3.5.0",
+    "concurrently": "^3.6.1",
     "webpack": "^4.20.2",
     "webpack-dev-server": "^3.1.9"
   }
