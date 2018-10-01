@@ -9,8 +9,17 @@ const Navbar = () => {
     <Root>
         <nav className= { styles.nav }>
           <img className= { styles.logo } src= { logo } alt='logo'  />
-             <NavLink className= { styles.NavLink} to= {'/'}>Home</NavLink>
-             <NavLink  className= { styles.NavLink} to= {'/Login'}>Login</NavLink>
+             <NavLink
+                className= { styles.NavLink}
+                to= {'/'} exact
+                activeStyle= {{color:'green'}}>
+                Home
+             </NavLink>
+             <NavLink
+                className= { styles.NavLink} 
+                to= {'/Login'} exact 
+                activeStyle= {{color:'green'}}>Login
+                </NavLink>
          </nav>
     </Root>
     );
