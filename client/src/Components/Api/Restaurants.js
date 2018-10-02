@@ -33,37 +33,37 @@ export default class Restaurants extends Component {
     fetch(
       "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=60.21749913,24.8064967&radius=500&type=restaurant&key=AIzaSyDGgNbzA8m2lzd9ijxaGPhmoe-oVTr7nDk"
     )
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Sorry, something went wrong");
-        }
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Sorry, something went wrong");
+      }
+    })
+    .then(data =>
+      this.setState({
+        restaurants: data.results,
+        isLoading: false
       })
-      .then(data =>
-        this.setState({
-          restaurants: data.results,
-          isLoading: false
-        })
-      )
-      .catch(error =>
-        this.setState({
-          error: null,
-          isLoading: false
-        })
-      );
+    )
+    .catch(error =>
+      this.setState({
+        error: null,
+        isLoading: false
+      })
+    );
   }
 
   handleClick = (name, vic) => {
     console.log(name);
     window.location.href =
-      "https://www.google.com/maps/dir//" + name + ", +" + vic;
+    "https://www.google.com/maps/dir//" + name + ", +" + vic;
   };
   AddToFav = () => {
     alert("Added to favourites!");
   };
-  test = () => {
-    alert("Added to favourites!");
+  CurrentLocDir = (lat,long,name,vic) => {
+    window.location.href ="https://www.google.com/maps/dir/?api=1&origin=" + lat + "," +long + "&" + "destination=" + name + ", +" + vic
   };
   render() {
     const { restaurants, isLoading, error, location } = this.state;
@@ -88,17 +88,10 @@ export default class Restaurants extends Component {
           No, show me another place
         </button>
         <button
-          href={
-            "https://www.google.com/maps/dir/?api=1&origin=" +
-            location.lat +
-            "," +
-            location.long +
-            "&" +
-            "destination=" +
-            restaurant.name +
-            ", +" +
-            restaurant.vic
-          }
+          onClick={() => {
+            console.log("lat" + location.lat + "ja long " + location.long);
+            this.CurrentLocDir(location.lat, location.long, restaurant.name, restaurant.vicinity);
+          }}
         >
           Get directions from my current location
         </button>
@@ -121,15 +114,15 @@ export default class Restaurants extends Component {
 
         <div className={styles.circle}>
           <p> {restaurant.name}</p>
-          <p>{restaurant.vicinity}</p>
-          <p>
-            Rating:
-            {restaurant.rating}
-            /5
-          </p>
-          <img src={restaurant.icon} alt="Restaurant picture" />
-        </div>
-      </div>
-    );
-  }
-}
+                  <p>{restaurant.vicinity}</p>
+                  <p>
+                    Rating:
+                    {restaurant.rating}
+                    /5
+                  </p>
+                  <img src={restaurant.icon} alt="Restaurant picture" />
+                </div>
+              </div>
+            );
+          }
+        }
