@@ -84,7 +84,8 @@ render() {
     return <p>{error.message}</p>;
   }
 
-  if (restaurants.length === 0) return <div>loading</div>;
+  if (restaurants.length === 0 )return <div>loading</div>;
+    if(this.state.index === 15) this.setState({ index: this.state.index = 0});
   return (
 
     <div>
@@ -93,17 +94,17 @@ render() {
       <button
         className= {styles.button}
         onClick={() => this.setState({ index: this.state.index + 1 })}
-        >
-          No, show me another place
-        </button>
-        <button
-          className={styles.button}
-          onClick={() => {
-            console.log("lat" + location.lat + "ja long " + location.long);
-            this.CurrentLocDir(location.lat, location.long, restaurant.name, restaurant.vicinity);
-          }}
-          >
-            Get directions from my current location
+      >
+        No, show me another place
+      </button>
+      <button
+        className={styles.button}
+        onClick={() => {
+          console.log("lat" + location.lat + "ja long " + location.long);
+          this.CurrentLocDir(location.lat, location.long, restaurant.name, restaurant.vicinity);
+        }}
+      >
+        Get directions from my current location
           </button>
           <button
             className={styles.button}
