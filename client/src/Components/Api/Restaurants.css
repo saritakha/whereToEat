@@ -16,3 +16,11 @@ ul
     background-color: brown;
   }
 
+
+.button {
+    background-color: orange;
+    border: 2px solid orange;
+    margin: 5px;
+    align-items: center;
+    font-size: 18px;
+}

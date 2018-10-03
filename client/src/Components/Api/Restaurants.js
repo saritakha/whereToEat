@@ -61,18 +61,15 @@ export default class Restaurants extends Component{
     return(
       <div>
         <Navbar/>
-        <button className='button' onClick={() => this.setState({index:this.state.index+1})}>No, show me another place</button>
-        <button className='button' onClick={() => {this.handleClick(restaurant.name, restaurant.vicinity)}}>Get me directions!</button>
-        <button className='button' onClick={() => {this.AddToFav()}}>Add to favourites</button>
-
-               <div className={styles.circle}>
-                
-                  <p> {restaurant.name}</p>
-                  <p>{restaurant.vicinity}</p>
-                  <p>Rating:{restaurant.rating}/5</p>
-                  <img src={restaurant.icon} alt="Restaurant picture"/>
-                
-               </div>
+        <button className= { styles.button } onClick={() => this.setState({index:this.state.index+1})}>No, show me another place</button>
+        <button className= { styles.button }  onClick={() => {this.handleClick(restaurant.name, restaurant.vicinity)}}>Get me directions!</button>
+        <button className= { styles.button }  onClick={() => {this.AddToFav()}}>Add to favourites</button>
+          <div className= { styles.circle }>
+            <p> { restaurant.name }</p>
+            <p>{ restaurant.vicinity }</p>
+            <p>Rating:{ restaurant.rating }/5</p>
+            <img src={ restaurant.icon } alt="Restaurant picture"/>
+          </div>
       </div>
     )
   }

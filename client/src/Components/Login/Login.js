@@ -1,6 +1,8 @@
 import React , { Component } from 'react';
 import Root from '../../hoc/Root';
 import Navbar from '../Navbar/Navbar';
+import styles from './Login.css';
+import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
 
 class Home extends Component{ 
     state = {
@@ -14,10 +16,18 @@ class Home extends Component{
     render(){
         return(
             <Root>
-               <Navbar/>
-            </Root>
-             );
-    }
+              <Navbar/>
+               <form  class= { styles.form }>
+                Username: 
+                  <FormControl
+                    type= 'text'
+                    placeholder= 'Enter Username' />
+                Password: 
+                  <FormControl
+                    placeholder= 'Enter Password' />
+               </form>    
+    </Root>
+    )}
     }
 
 export default Home;
