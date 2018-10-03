@@ -86,6 +86,7 @@ render() {
 
   if (restaurants.length === 0) return <div>loading</div>;
   return (
+
     <div>
       <Navbar />
 
