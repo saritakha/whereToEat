@@ -8,7 +8,8 @@ class Profile extends Component {
     super(props);
     this.state = {
       person: {
-        name: "Moomin",
+        username: "Moomin",
+        password: "******",
         biography: "5 year old programmer living in Helsinki."
       },
       image: "https://kawaiiface.net/wp-content/uploads/2015/07/moomin.jpg",
@@ -25,13 +26,21 @@ class Profile extends Component {
         <Navbar />
         <div className={style.App}>
           <div className={style.Profile}>
-            <h1 className={style.Name}>{this.state.person.name}</h1>
-            <p className={style.Bio}>{this.state.person.biography}</p>
+            <h1 className={style.Name}>{this.state.person.username}</h1>
             <form class={style.form}>
+              Username:
+              <button>Change username</button>
+              <FormControl placeholder={this.state.person.username} />{" "}
+              Biography:
+              <button>Change biography</button>
+              <FormControl placeholder={this.state.person.biography} />
               Password:
-              <FormControl placeholder="*******" />
+              <button>Change password</button>
+              <FormControl placeholder={this.state.person.password} />
             </form>
+            <button className={style.Button}>Change profile picture</button>
             <img src={this.state.image} />
+            <button className={style.Button}>Change quote</button>
             <div className={style.Quote}>
               <blockquote>
                 &ldquo; {this.state.quote.content} &rdquo;
