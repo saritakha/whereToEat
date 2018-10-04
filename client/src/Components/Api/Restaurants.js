@@ -11,8 +11,8 @@ export default class Restaurants extends Component {
       error: null,
       index: 0,
       location: {
-        lat: 0,
-        long: 0
+        lat: 60.2208030,
+        long: 24.805207
       }
     };
   }
@@ -30,14 +30,14 @@ export default class Restaurants extends Component {
       });
     },
     (error) => this.setState({ error: error.message }),
-    { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000, distanceFilter: 10 }
+    { enableHighAccuracy: true, maximumAge: 1000, distanceFilter: 10 }
   );
 
   this.setState({
     isLoading: true
   });
   fetch(
-    "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=60.21749913,24.8064967&radius=500&type=restaurant&key=AIzaSyDGgNbzA8m2lzd9ijxaGPhmoe-oVTr7nDk"
+    "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +self.state.location.lat +"," +self.state.location.long + "&radius=500&type=restaurant&key=AIzaSyDGgNbzA8m2lzd9ijxaGPhmoe-oVTr7nDk"
   )
   .then(response => {
     if (response.ok) {
@@ -74,7 +74,8 @@ CurrentLocDir = (lat,long,name,vic) => {
 };
 
 render() {
-  const { restaurants, isLoading, error, location } = this.state;
+  const { restaurants, isLoading, error } = this.state;
+  const location = this.state.location;
   const restaurant = restaurants[this.state.index];
   console.log(restaurants);
   if (isLoading) {
