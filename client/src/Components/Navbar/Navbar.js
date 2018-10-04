@@ -20,6 +20,11 @@ const Navbar = () => {
                 to= {'/Login'} exact 
                 activeStyle= {{color:'green'}}>Login
                 </NavLink>
+             <NavLink
+                className= { styles.NavLink} 
+                to= {'/profile'} exact 
+                activeStyle= {{color:'green'}}>Profile
+                </NavLink>
          </nav>
     </Root>
     );

@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
-import Home from './Components/Home/Home';
-import { BrowserRouter , Route } from 'react-router-dom'
-import Restaurants from './Components/Api/Restaurants';
-import Login from './Components/Login/Login';
+import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import Restaurants from "./Components/Api/Restaurants";
+import Login from "./Components/Login/Login";
+import Profile from "./Components/Profile/Profile";
 
 class App extends Component {
-  // constructor(props){
-  //   super(props);
-  // }
+ 
   state = {
-    response: '',
+    response: "",
     food: []
   };
 
@@ -30,19 +28,13 @@ class App extends Component {
 
   render() {
     return (
-
-      // Test stuff for server
-      /*<div className="App">
-        <p className="App-intro">{this.state.response}</p>
-      </div>*/
-
-     <BrowserRouter>
-       <div>
-         <Route exact= {true} path= '/' component= { Home }/>
-         <Route path= '/Restaurants' component= { Restaurants }/>
-         <Route path= '/Login' component= { Login }/>
-      </div>
-     </BrowserRouter>
+      <BrowserRouter>
+        <div>
+          <Route exact={true} path="/" component={Restaurants} />
+          <Route path="/Login" component={Login} />
+          <Route path="/Profile" component={Profile} />
+        </div>
+      </BrowserRouter>
     );
   }
 }

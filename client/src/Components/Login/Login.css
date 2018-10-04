@@ -3,4 +3,13 @@
     border: 1px solid black;
     padding: 50px;
     background-color: burlywood;
+    align-items: center;
+}
+
+.form button {
+    margin: 5px;
+    align-items: center;
+    background-color: brown;
+    color: white;
+    padding: 5px;
 }
