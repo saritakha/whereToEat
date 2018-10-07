@@ -23,7 +23,7 @@ const Navbar = () => {
         <NavLink
           className= { styles.NavLink}
           to= {'/signup'} exact
-          activeStyle= {{color:'green'}}>Sign Up
+          activeStyle= {{color:'green'}}>Sign up
         </NavLink>
         <NavLink
           className= { styles.NavLink}

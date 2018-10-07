@@ -57,6 +57,7 @@ render() {
         <Route exact path="/signup" component={SignUp} />
       </div>
     </BrowserRouter>
+
   );
 }
 }
