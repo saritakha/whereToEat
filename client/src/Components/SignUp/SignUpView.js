@@ -1,8 +1,10 @@
 import React from "react";
-
+import Navbar from "../Navbar/Navbar";
 const SignUpView = ({ onSubmit }) => {
   return (
+
     <div>
+        <Navbar />
       <h1>Sign up</h1>
       <form onSubmit={onSubmit}>
         <label>
