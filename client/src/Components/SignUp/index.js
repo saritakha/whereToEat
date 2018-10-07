@@ -12,6 +12,7 @@ class SignUpContainer extends Component {
       .auth()
       .createUserWithEmailAndPassword(email.value, password.value);
       this.props.history.push("/");
+          alert("Created user " + email.value);
     } catch (error) {
       alert(error);
     }
