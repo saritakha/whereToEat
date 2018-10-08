@@ -1,13 +1,24 @@
 import React , { Component } from 'react';
 import Root from '../../hoc/Root';
 import Navbar from '../Navbar/Navbar';
-import { NavLink } from 'react-router-dom';
 import styles from './Login.css';
-import {  FormControl, Glyphicon, FormGroup, InputGroup } from 'react-bootstrap';
+import {  FormControl } from 'react-bootstrap';
 
 class Home extends Component{ 
-    state = {
+    constructor(props) {
+    super(props)
+    this.authWithEmailPassword = this.authWithEmailPassword.bind(this)
+ }   
+  state = {
         LoggedIn: false
+    }
+
+    authWithEmailPassword(e) {
+     e.preventDefault();
+     console.table([{
+         email: this.emailInput.value,
+         password: this.PasswordInput.value
+     }])
     }
 
     loginHandler = () => {
@@ -18,16 +29,23 @@ class Home extends Component{
         return(
             <Root>
               <Navbar/>
-               <form className= { styles.form }>
-                Username: 
+               <form className= { styles.form }
+                onSubmit= {(e) => { this.authWithEmailPassword(e)}}
+                ref={(form) => { this.loginForm = form }}>
+                Email: 
                   <FormControl
-                    type= 'text'
-                    placeholder= 'Enter Username' />
+                    type= 'email'
+                    name= 'email'
+                    placeholder= 'Enter Username'
+                    ref= {(input) => { this.emailInput = input }} />
                 Password: 
                   <FormControl 
                     type= 'password'
-                    placeholder= 'Enter Password' />
-                 <button><NavLink  to= {'/'}>Login</NavLink></button>   
+                    name= 'password'
+                    placeholder= 'Enter Password'
+                    ref= {(input) => { this.PasswordInput = input }}  />
+                 <input type= 'submit' />    
+                 <button>Signup</button>   
                </form>    
     </Root>
     )}
