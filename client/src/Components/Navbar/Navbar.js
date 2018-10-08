@@ -18,7 +18,6 @@ class Navbar extends Component{
     <Root>
       <nav className= { styles.nav }>
         <img className= { styles.logo } src= { logo } alt='logo'  />
-      
         <NavLink
           className= { styles.NavLink}
           to= {'/'} exact
@@ -30,7 +29,7 @@ class Navbar extends Component{
           to= {'/profile'} exact
           activeStyle= {{color:'green'}}>Profile
         </NavLink>
-        <button onClick={this.logout.bind(this)}>LogOut</button>
+        <button    className= { styles.NavLink} onClick={this.logout.bind(this)}>LogOut</button>
          </nav>
     </Root>
     );
