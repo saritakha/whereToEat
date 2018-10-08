@@ -20,18 +20,28 @@ class Profile extends Component {
         <Navbar />
         <div className={style.Profile}>
           <h1 className={style.Name}>{this.state.username}</h1>
-          Email:
-          <button onClick={this.changeEmail}>Change email</button>
-          <input
-            placeholder={this.state.email}
-            onChange={value => this.setState({ email: value.target.value })}
-          />
-          Password:
-          <button onClick={this.changePassword}>Change password</button>
-          <input
-            type="password"
-            onChange={value => this.setState({ password: value.target.value })}
-          />
+          <div className={style.item}>
+            <div>
+              Email:
+              <button onClick={this.changeEmail}>Change email</button>
+            </div>
+            <input
+              placeholder={this.state.email}
+              onChange={value => this.setState({ email: value.target.value })}
+            />
+          </div>
+          <div className={style.item}>
+            <div>
+              Password:
+              <button onClick={this.changePassword}>Change password</button>
+            </div>
+            <input
+              type="password"
+              onChange={value =>
+                this.setState({ password: value.target.value })
+              }
+            />
+          </div>
         </div>
       </div>
     );

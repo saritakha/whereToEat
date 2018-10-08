@@ -102,6 +102,8 @@ export default class Restaurants extends Component {
     if (restaurants.length === 0) return <div>loading</div>;
     if (this.state.index === 15)
       this.setState({ index: (this.state.index = 0) });
+
+    console.log(this.state);
     return (
       <div>
         <Navbar />
