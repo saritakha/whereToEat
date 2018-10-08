@@ -8,9 +8,6 @@ import SignUp from "./Components/SignUp";
 import PrivateRoute from "./PrivateRoute";
 
 class App extends Component {
-
-
-
   state = {
     response: "",
     food: [],
@@ -19,7 +16,8 @@ class App extends Component {
     user:{},
   };
 
-  componentDidMount() { app.auth().onAuthStateChanged(user => {
+  componentDidMount() {
+   app.auth().onAuthStateChanged(user => {
     if (user) {
       alert("Logged in as " + user.email)
 
@@ -50,7 +48,6 @@ render() {
   if (loading) {
     return <p>Loading..</p>;
   }
-
 
 
   return (

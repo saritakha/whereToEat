@@ -29,8 +29,10 @@ class Navbar extends Component{
           to= {'/profile'} exact
           activeStyle= {{color:'green'}}>Profile
         </NavLink>
-        <button    className= { styles.NavLink} onClick={this.logout.bind(this)}>LogOut</button>
-         </nav>
+        <button   
+        className= { styles.NavLink} 
+        onClick={this.logout.bind(this)}>LogOut</button>
+      </nav>
     </Root>
     );
 }}
