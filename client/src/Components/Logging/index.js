@@ -13,6 +13,7 @@ class LogInContainer extends Component {
       .signInWithEmailAndPassword(email.value, password.value);
       this.props.history.push("/");
         alert("logged in as " + email.value);
+
     } catch (error) {
       alert(error);
     }
