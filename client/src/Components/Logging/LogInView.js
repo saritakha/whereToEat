@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
+import style from './Login.css';
+
 const LogInView = ({ onSubmit }) => {
   return (
 
     <div>
-      <h1>Please log in first or sign up in the top right</h1>
-      <form onSubmit={onSubmit}>
-        <label>
+      <form className={style.form} onSubmit={onSubmit}>
+        <label  className={style.label} >
           Email
           <input
             style={{ width: "100%" }}
@@ -15,7 +15,8 @@ const LogInView = ({ onSubmit }) => {
             placeholder="Email@email.net"
           />
         </label>
-        <label>
+   
+        <label  className={style.label} >
           Password
           <input
             style={{ width: "100%" }}

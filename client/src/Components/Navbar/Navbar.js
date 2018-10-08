@@ -10,7 +10,7 @@ import app from '../../base';
 class Navbar extends Component{ 
 
   logout = () => {
-    app.auth().signOut().then(alert('logged out')).catch(err=> console.log(err))  }
+    app.auth().signOut().then().catch(err=> console.log(err))  }
   
 
     render () { 
@@ -18,6 +18,7 @@ class Navbar extends Component{
     <Root>
       <nav className= { styles.nav }>
         <img className= { styles.logo } src= { logo } alt='logo'  />
+      
         <NavLink
           className= { styles.NavLink}
           to= {'/'} exact
@@ -30,11 +31,6 @@ class Navbar extends Component{
           activeStyle= {{color:'green'}}>Profile
         </NavLink>
         <button onClick={this.logout.bind(this)}>LogOut</button>
-        <NavLink
-          className= { styles.NavLink}
-          to= {'/logout'} exact
-          activeStyle= {{color:'green'}}>Logout
-        </NavLink>
          </nav>
     </Root>
     );

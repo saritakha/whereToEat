@@ -1,8 +1,9 @@
 .form {
-    margin: 30px;
+    margin: auto;
+    width:30%;
     border: 1px solid black;
     padding: 50px;
-    background-color: burlywood;
+    background-color:#d0c2d1;
     align-items: center;
 }
 
