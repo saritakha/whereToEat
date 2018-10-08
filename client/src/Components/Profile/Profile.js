@@ -2,49 +2,70 @@ import React, { Component } from "react";
 import Root from "../../hoc/Root";
 import Navbar from "../Navbar/Navbar";
 import style from "./Profile.css";
-import { FormGroup, FormControl, InputGroup, Glyphicon } from "react-bootstrap";
+import App from "../../base";
 class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      person: {
-        username: "Moomin",
-        password: "******",
-        biography: "5 year old programmer living in Helsinki."
-      },
-      image: "https://kawaiiface.net/wp-content/uploads/2015/07/moomin.jpg",
-      quote: {
-        content: "You'll have to admit that it's fun to be lazy.",
-        source: "The Exploits of Moominpappa"
-      }
+      email: App.auth().currentUser.email,
+      password: ""
     };
+    this.changeEmail = this.changeEmail.bind(this);
+    this.changePassword = this.changePassword.bind(this);
   }
 
   render() {
     return (
-      <Root>
+      <div>
         <Navbar />
-        <div className={style.App}>
-          <div className={style.Profile}>
-            <h1 className={style.Name}>{this.state.person.username}</h1>
-            <form class={style.form}>
-              Username:
-              <button>Change username</button>
-              <FormControl placeholder={this.state.person.username} />{" "}
-              Biography:
-              <button>Change biography</button>
-              <FormControl placeholder={this.state.person.biography} />
+        <div className={style.Profile}>
+          <h1 className={style.Name}>{this.state.username}</h1>
+          <div className={style.item}>
+            <div>
+              Email:
+              <button onClick={this.changeEmail}>Change email</button>
+            </div>
+            <input
+              placeholder={this.state.email}
+              onChange={value => this.setState({ email: value.target.value })}
+            />
+          </div>
+          <div className={style.item}>
+            <div>
               Password:
-              <button>Change password</button>
-              <FormControl placeholder={this.state.person.password} />
-              Profile picture:
-              <button className={style.Button}>Change profile picture</button>
-              <img src={this.state.image} />
-            </form>
+              <button onClick={this.changePassword}>Change password</button>
+            </div>
+            <input
+              type="password"
+              onChange={value =>
+                this.setState({ password: value.target.value })
+              }
+            />
           </div>
         </div>
-      </Root>
+      </div>
     );
+  }
+
+  async changeEmail() {
+    let user = App.auth().currentUser;
+    try {
+      console.log();
+      let res = await user.updateEmail(this.state.email);
+      console.log(res);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  async changePassword() {
+    let user = App.auth().currentUser;
+    try {
+      let res = await user.updatePassword(this.state.password);
+      console.log(res);
+    } catch (e) {
+      console.log(e);
+    }
   }
 }
 

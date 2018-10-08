@@ -1,5 +1,6 @@
 import React from "react";
 import style from './Login.css';
+import { NavLink } from "react-router-dom";
 
 const LogInView = ({ onSubmit }) => {
   return (
@@ -26,6 +27,12 @@ const LogInView = ({ onSubmit }) => {
           />
         </label>
         <button type="submit">Log in</button>
+        <NavLink
+            to={"/signup"}
+            exact
+        >
+          Signup
+          </NavLink>
       </form>
     </div>
   );
