@@ -37,18 +37,10 @@ class Profile extends Component {
               Password:
               <button>Change password</button>
               <FormControl placeholder={this.state.person.password} />
+              Profile picture:
+              <button className={style.Button}>Change profile picture</button>
+              <img src={this.state.image} />
             </form>
-            <button className={style.Button}>Change profile picture</button>
-            <img src={this.state.image} />
-            <button className={style.Button}>Change quote</button>
-            <div className={style.Quote}>
-              <blockquote>
-                &ldquo; {this.state.quote.content} &rdquo;
-              </blockquote>
-              <div className={style.byline}>
-                &mdash; {this.state.quote.source}
-              </div>
-            </div>
           </div>
         </div>
       </Root>
