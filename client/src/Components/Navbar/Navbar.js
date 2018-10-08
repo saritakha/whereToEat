@@ -1,10 +1,19 @@
-import React from 'react';
+import React , {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from './../Img/logo.png';
 import styles from './Navbar.css';
 import Root from '../../hoc/Root';
+import app from '../../base';
 
-const Navbar = () => {
+
+
+class Navbar extends Component{ 
+
+  logout = () => {
+    app.auth().signOut().then(alert('logged out')).catch(err=> console.log(err))  }
+  
+
+    render () { 
     return(
     <Root>
       <nav className= { styles.nav }>
@@ -17,22 +26,18 @@ const Navbar = () => {
         </NavLink>
         <NavLink
           className= { styles.NavLink}
-          to= {'/Login'} exact
-          activeStyle= {{color:'green'}}>Login
-        </NavLink>
-        <NavLink
-          className= { styles.NavLink}
-          to= {'/signup'} exact
-          activeStyle= {{color:'green'}}>Sign up
-        </NavLink>
-        <NavLink
-          className= { styles.NavLink}
           to= {'/profile'} exact
           activeStyle= {{color:'green'}}>Profile
+        </NavLink>
+        <button onClick={this.logout.bind(this)}>LogOut</button>
+        <NavLink
+          className= { styles.NavLink}
+          to= {'/logout'} exact
+          activeStyle= {{color:'green'}}>Logout
         </NavLink>
          </nav>
     </Root>
     );
-}
+}}
 
 export default Navbar;

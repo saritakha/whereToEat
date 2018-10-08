@@ -4,6 +4,7 @@ import { withRouter } from "react-router";
 import app from "../../base";
 
 class LogInContainer extends Component {
+  
   handleSignUp = async event => {
     event.preventDefault();
     const { email, password } = event.target.elements;

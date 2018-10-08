@@ -4,7 +4,6 @@ const LogInView = ({ onSubmit }) => {
   return (
 
     <div>
-      <Navbar />
       <h1>Please log in first or sign up in the top right</h1>
       <form onSubmit={onSubmit}>
         <label>
