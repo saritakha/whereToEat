@@ -9,6 +9,8 @@ import PrivateRoute from "./PrivateRoute";
 
 class App extends Component {
 
+
+
   state = {
     response: "",
     food: [],
@@ -19,6 +21,8 @@ class App extends Component {
 
   componentDidMount() { app.auth().onAuthStateChanged(user => {
     if (user) {
+      alert("Logged in as " + user.email)
+
       this.setState({
         authenticated: true,
         currentUser: user,
@@ -36,14 +40,12 @@ class App extends Component {
 callApi = async () => {
   const response = await fetch("/hello");
   const body = await response.json();
-
   if (response.status !== 200) throw Error(body.message);
-
   return body;
 };
 
 render() {
-  const { authenticated, loading } = this.state;
+  const { authenticated, loading} = this.state;
 
   if (loading) {
     return <p>Loading..</p>;
