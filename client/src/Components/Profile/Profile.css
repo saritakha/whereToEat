@@ -7,51 +7,59 @@
   font-family: "Roboto";
   display: flex;
 }
+
 @media screen and (max-width: 980px) {
   .App {
     flex-direction: column;
   }
 }
+
 .App .Image {
   width: 50vw;
   position: relative;
   background-size: cover;
   background-position: center;
 }
+
 @media screen and (max-width: 980px) {
   .App .Image {
     width: 100vw;
     height: 70vh;
   }
 }
+
 .App .Profile {
   width: 50vw;
-  padding: 5vw 10vw;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   color: #2c2c54;
 }
+
 @media screen and (max-width: 980px) {
   .App .Profile {
     width: 100vw;
     height: 30vh;
   }
 }
-.App .Profile .Name {
+
+/*.App .Profile .Name {
   font-size: 6vw;
   font-family: "Abril Fatface";
   margin-bottom: 4vw;
 }
+
 .App .Profile .Bio {
   font-size: 15px;
   line-height: 1.8;
   margin-bottom: 3vw;
   opacity: 0.4;
 }
+
 .App .Profile .Quote {
   margin-top: auto;
 }
+
 .App .Profile .Quote blockquote {
   font-size: 36px;
   font-family: "Abril Fatface";
@@ -59,6 +67,7 @@
   line-height: 1.4;
   margin-bottom: 0.6em;
 }
+
 .App .Profile .Quote .byline {
   font-family: "Times", serif;
   text-align: right;
@@ -66,13 +75,40 @@
   font-style: italic;
   opacity: 0.25;
 }
+
 .App .Profile .form {
   margin: 30px;
 }
 
-.App .Profile .button {
-}
-
 .item {
   padding-left: 100px;
+}*/
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!! */
+/* CSS for just Profile.js */
+
+.Profile {
+  width: 40%;
+  margin: 50px auto 0;
+  padding: 30px 10px;
+  background-color: #841B1B;
+  color: white;
+  text-align: center;
+  outline: 1px dotted #FF8C42;
+  outline-offset: -10px;
+}
+
+.Name {
+  color: white;
+  font-size: 25px;
+}
+
+.header {
+
+}
+
+.input {
+  
 }

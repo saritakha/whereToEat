@@ -3,6 +3,7 @@ import Root from "../../hoc/Root";
 import Navbar from "../Navbar/Navbar";
 import style from "./Profile.css";
 import App from "../../base";
+
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -32,12 +33,14 @@ class Profile extends Component {
         <Navbar />
         <div className={style.Profile}>
           <h1 className={style.Name}>{this.state.username}</h1>
+          <h1 className={style.header}>Edit your information</h1>
           <div className={style.item}>
             <div>
               Email:
               <button onClick={this.changeEmail}>Change email</button>
             </div>
             <input
+              className= { style.input }
               placeholder={this.state.email}
               onChange={value => this.setState({ email: value.target.value })}
             />
@@ -48,6 +51,7 @@ class Profile extends Component {
               <button onClick={this.changePassword}>Change password</button>
             </div>
             <input
+              className= { style.input }
               type="password"
               onChange={value =>
                 this.setState({ password: value.target.value })
