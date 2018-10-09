@@ -103,7 +103,7 @@ export default class Restaurants extends Component {
       .then()
       .catch(err => console.log(err));
   };
-  
+
 
   render() {
     const { restaurants, isLoading, error } = this.state;
@@ -123,19 +123,19 @@ export default class Restaurants extends Component {
 
     console.log(this.state);
 
-    
+
     return (
       <div>
         <Navbar />
         <div className={styles.pagelayout}>
-            <div className={styles.sidebar}>
-                <div className={styles.sideflex}>
-                   {/*} <button
-                      className={styles.button}
-                      onClick={() => this.setState({ index: this.state.index + 1 })}
-                    >
-                      Next option
-                    </button> */}
+          <div className={styles.sidebar}>
+            <div className={styles.sideflex}>
+              <button
+                className={styles.button}
+                onClick={() => this.setState({ index: this.state.index + 1 })}
+              >
+                Next option
+              </button>
                     <button
                       className={styles.button}
                       onClick={() => {
@@ -172,7 +172,7 @@ export default class Restaurants extends Component {
                     </button>
                 </div>
             </div>
-            
+
             <div className={styles.main}>
                 <div className={styles.circle}
                 onClick={() => this.setState({ index: this.state.index + 1 })}>
