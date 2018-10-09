@@ -3,22 +3,22 @@ import { NavLink } from "react-router-dom";
 import logo from "./../Img/logo.png";
 import styles from "./Navbar.css";
 import Root from "../../hoc/Root";
+import app from "../../base";
 
 class Navbar extends Component {
+  logout = () => {
+    app
+      .auth()
+      .signOut()
+      .then()
+      .catch(err => console.log(err));
+  };
 
   render() {
     return (
       <Root>
         <nav className={styles.nav}>
           <img className={styles.logo} src={logo} alt="logo" />
-          <NavLink
-            className={styles.NavLink}
-            to={"/logout"}
-            exact
-            activeStyle={{ color: "#FF8C42" }}
-          >
-            Logout
-          </NavLink>
           <NavLink
             className={styles.NavLink}
             to={"/"}
@@ -35,6 +35,9 @@ class Navbar extends Component {
           >
             Profile
           </NavLink>
+          <button className={styles.NavLink} onClick={this.logout.bind(this)}>
+            LogOut
+          </button>
         </nav>
       </Root>
     );

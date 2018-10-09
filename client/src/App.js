@@ -6,7 +6,6 @@ import app from "./base";
 import LogIn from "./Components/Logging";
 import SignUp from "./Components/SignUp";
 import PrivateRoute from "./PrivateRoute";
-import Logout from "./Components/Logout/Logout";
 
 class App extends Component {
   state = {
@@ -44,7 +43,7 @@ callApi = async () => {
 };
 
 render() {
-  const {loading} = this.state;
+  const { authenticated, loading} = this.state;
 
   if (loading) {
     return <p>Loading..</p>;
@@ -58,7 +57,6 @@ render() {
         <PrivateRoute exact path="/" component={Restaurants} authenticated={this.state.authenticated}/>
         <Route exact path="/login" component={LogIn} />
         <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/logout" component={Logout}/>
       </div>
     </BrowserRouter>
 

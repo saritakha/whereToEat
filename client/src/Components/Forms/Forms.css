@@ -24,7 +24,7 @@
   padding: 5px;
 }
 
-.login, .signup, .submit {
+.login, .signup {
   margin: 10px;
   color: #555555;
   background-color: white;
@@ -49,8 +49,3 @@
 .signup {
   padding: 7px;
 }
-
-.submit:hover {
-  background-color: black;
-  color: white;
-} 
