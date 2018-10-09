@@ -1,6 +1,5 @@
-
 .nav {
-    background-color: #d0d9e8;
+    background-color: transparent;
 }
 
 .nav .logo {
@@ -10,14 +9,19 @@
 }
 
 .nav .NavLink {
+   width: 10%;
+   height: 80px;
+   line-height: 60px;
    float: right;
-   margin: 15px;
+   padding: 10px;
    text-decoration: none;
-   font-size: 17px;
+   text-align: center;
+   font-size: 18px;
+   color: white;
+   background-color: #841B1B;
+   border: 1px solid #590E0E;
 }
 
 .nav .NavLink:hover {
-     color: black;
-     background-color: orange;
-     padding: 5px;
+  color: black;
 }

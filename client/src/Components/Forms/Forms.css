@@ -1,0 +1,28 @@
+.form {
+  width: 40%;
+  margin: 50px auto 0;
+  padding: 30px 10px;
+  background-color: #841B1B;
+  color: white;
+  text-align: center;
+  outline: 1px dotted #FF8C42;
+  outline-offset: -10px;
+}
+
+.header {
+  padding-bottom: 25px;
+  color: white;
+  font-size: 25px;
+}
+
+.submit {
+  color: #555555;
+  background-color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.submit:hover {
+  background-color: black;
+  color: white;
+}

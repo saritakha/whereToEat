@@ -1,30 +1,35 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
+import styles from '../Forms/Forms.css';
+
 const SignUpView = ({ onSubmit }) => {
   return (
-
     <div>
-        <Navbar />
-      <h1>Sign up</h1>
-      <form onSubmit={onSubmit}>
-        <label>
-          Email
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-          />
-        </label>
-        <label>
-          Password
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-          />
-        </label>
-        <button type="submit">Sign Up</button>
-      </form>
+      <Navbar />
+      <div className= { styles.form }>
+        <h1 className= { styles.header }>Sign up</h1>
+        <form onSubmit={onSubmit}>
+          <label>
+            Email
+            <input
+              style={{ width: "100%" }}
+              name="email"
+              type="email"
+              placeholder="Email"
+            />
+          </label>
+          <label>
+            Password
+            <input
+              style={{ width: "100%" }}
+              name="password"
+              type="password"
+              placeholder="Password"
+            />
+          </label>
+          <button type="submit" className= { styles.submit }>Sign Up</button>
+        </form>
+      </div>
     </div>
   );
 };
