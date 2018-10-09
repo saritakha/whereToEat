@@ -5,7 +5,6 @@ import styles from '../Forms/Forms.css';
 const SignUpView = ({ onSubmit }) => {
   return (
     <div>
-      <Navbar />
       <div className= { styles.form }>
         <h1 className= { styles.header }>Sign up</h1>
         <form onSubmit={onSubmit}>
