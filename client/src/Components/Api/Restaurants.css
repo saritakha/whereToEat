@@ -15,6 +15,7 @@ ul
     margin-top: 60px;
     background-color: brown;
     border: 3px dotted #FF8C42;
+    cursor: pointer;
     
     /*prevents text highlighting*/ 
     -webkit-user-select: none; /* Chrome/Safari */        
