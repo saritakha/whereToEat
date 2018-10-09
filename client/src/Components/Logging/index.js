@@ -9,19 +9,16 @@ class LogInContainer extends Component {
     event.preventDefault();
     const { email, password } = event.target.elements;
     try {
-      const user = await app
+      await app
       .auth()
       .signInWithEmailAndPassword(email.value, password.value);
       this.props.history.push("/");
-
-
     } catch (error) {
       alert(error);
     }
   };
 
   render() {
-
     return <LogInView onSubmit={this.handleSignUp} />;
   }
 }
