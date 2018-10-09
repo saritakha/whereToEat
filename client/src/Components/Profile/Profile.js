@@ -55,6 +55,7 @@ class Profile extends Component {
       alert("Updated email to " + this.state.email);
       console.log(res);
     } catch (e) {
+      alert("Unable to update email: " + e.message);
       console.log(e);
     }
   }
@@ -66,6 +67,7 @@ class Profile extends Component {
       alert("Updated password to " + this.state.password);
       console.log(res);
     } catch (e) {
+      alert("Unable to update password: " + e.message);
       console.log(e);
     }
   }
