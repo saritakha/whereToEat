@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import styles from "./Restaurants.css";
 import Navbar from "../Navbar/Navbar";
-
+import app from "../../base";
 export default class Restaurants extends Component {
   constructor() {
     super();
     this.state = {
       restaurants: [],
+      favourites:[],
       isLoading: false,
       error: null,
       index: 0,
@@ -18,6 +19,11 @@ export default class Restaurants extends Component {
   }
 
   componentDidMount() {
+    let messagesRef = app.database().ref('messages').orderByKey().limitToLast(100);
+   messagesRef.on('child_added', snapshot => {
+     let message = { text: snapshot.val(), id: snapshot.key };
+     this.setState({ messages: [message].concat(this.state.messages) });
+   })
     let self = this;
     navigator.geolocation.watchPosition(
       function(position) {
@@ -65,12 +71,15 @@ export default class Restaurants extends Component {
       );
   }
 
+
   handleClick = (name, vic) => {
     console.log(name);
     window.open("https://www.google.com/maps/dir//" + name + ", +" + vic);
   };
   AddToFav = name => {
+    app.database().ref('favourites').push(name);
     alert("Added to favourites: " + name);
+    name = '';
   };
   CurrentLocDir = (lat, long, name, vic) => {
     console.log("lat: " + lat + " long: " + long);
