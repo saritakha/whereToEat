@@ -34,13 +34,8 @@
   outline-offset: -2px;
 }
 
-.login:hover {
-  background-color: black;
-  color: white;
-}
-
-.signup:hover {
-  background-color: #FF8C42;
+.login:hover, .signup:hover {
+  background-image: linear-gradient(to bottom right, #FF8C42, #FFAF7C);
   color: white;
   outline: 1px dotted white;
   outline-offset: -2px;
