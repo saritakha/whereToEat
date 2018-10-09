@@ -3,7 +3,6 @@ import Root from "../../hoc/Root";
 import Navbar from "../Navbar/Navbar";
 import style from "./Profile.css";
 import App from "../../base";
-
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -53,6 +52,7 @@ class Profile extends Component {
     try {
       console.log();
       let res = await user.updateEmail(this.state.email);
+      alert("Updated email to " + this.state.email);
       console.log(res);
     } catch (e) {
       console.log(e);
@@ -63,6 +63,7 @@ class Profile extends Component {
     let user = App.auth().currentUser;
     try {
       let res = await user.updatePassword(this.state.password);
+      alert("Updated password to " + this.state.password);
       console.log(res);
     } catch (e) {
       console.log(e);
