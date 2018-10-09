@@ -5,14 +5,14 @@ import styles from '../Forms/Forms.css';
 const SignUpView = ({ onSubmit }) => {
   return (
     <div>
-
+      <Navbar />
       <div className= { styles.form }>
-        <h1 className= { styles.header }>Sign Up</h1>
+        <h1 className= { styles.header }>Sign up</h1>
         <form onSubmit={onSubmit}>
           <label>
             Email
             <input
-              className= { styles.input }
+              style={{ width: "100%" }}
               name="email"
               type="email"
               placeholder="Email"
@@ -21,13 +21,13 @@ const SignUpView = ({ onSubmit }) => {
           <label>
             Password
             <input
-              className= { styles.input }
+              style={{ width: "100%" }}
               name="password"
               type="password"
               placeholder="Password"
             />
           </label>
-          <button type="submit" className= { styles.signup }>Sign Up</button>
+          <button type="submit" className= { styles.submit }>Sign Up</button>
         </form>
       </div>
     </div>

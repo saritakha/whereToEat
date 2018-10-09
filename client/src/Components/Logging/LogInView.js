@@ -11,7 +11,7 @@ const LogInView = ({ onSubmit }) => {
           <label>
             Email
             <input
-              className= { styles.input }
+              style={{ width: "100%" }}
               name="email"
               type="email"
               placeholder="Email@email.net"
@@ -20,20 +20,19 @@ const LogInView = ({ onSubmit }) => {
           <label>
             Password
             <input
-              className= { styles.input }
+              style={{ width: "100%" }}
               name="password"
               type="password"
               placeholder="Password"
             />
           </label>
-          <button type="submit" className= { styles.login }>Log in</button>
+          <button type="submit" className= { styles.submit }>Log in</button>
           <NavLink
-              className= { styles.signup }
               to={"/signup"}
               exact
           >
-            Sign Up
-          </NavLink>
+            Signup
+            </NavLink>
         </form>
       </div>
     </div>
