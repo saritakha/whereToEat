@@ -14,7 +14,7 @@ class Profile extends Component {
     this.changeEmail = this.changeEmail.bind(this);
     this.changePassword = this.changePassword.bind(this);
   }
-  componentWillMount(){
+  componentDidMount(){
     let messagesRef = App.database().ref('favourites');
     messagesRef.on('child_added', snapshot => {
       let message = { text: snapshot.val(), id: snapshot.key };
@@ -25,7 +25,7 @@ class Profile extends Component {
     })
   }
   render() {
-    const { favourites} = this.state;
+    const favourites = this.state.favourites.map;
     console.log("faves " + favourites);
     return (
       <div>
@@ -54,12 +54,20 @@ class Profile extends Component {
               }
             />
           </div>
-          <div>Favourites: </div>
+          <ul>
+            <div>Favourites: {this.state.favourites.map(message =>
+              <li key={message.id}>{message.text}
+              </li>
+            )}
 
+            </div>
+
+
+          </ul>
         </div>
       </div>
-    );
-  }
+        );
+        }
 
   async changeEmail() {
     let user = App.auth().currentUser;
