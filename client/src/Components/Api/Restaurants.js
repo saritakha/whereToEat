@@ -116,52 +116,61 @@ export default class Restaurants extends Component {
     return (
       <div>
         <Navbar />
-        <button
-          className={styles.button}
-          onClick={() => this.setState({ index: this.state.index + 1 })}
-        >
-          No, show me another place
-        </button>
-        <button
-          className={styles.button}
-          onClick={() => {
-            console.log("lat" + location.lat + "ja long " + location.long);
-            this.CurrentLocDir(
-              location.lat,
-              location.long,
-              restaurant.name,
-              restaurant.vicinity
-            );
-          }}
-        >
-          Get directions from my current location
-        </button>
-        <button
-          className={styles.button}
-          onClick={() => {
-            this.handleClick(restaurant.name, restaurant.vicinity);
-          }}
-        >
-          Get me directions from anywhere!
-        </button>
-        <button
-          className={styles.button}
-          onClick={() => {
-            this.AddToFav(restaurant.name);
-          }}
-        >
-          Add to favourites
-        </button>
-
-        <div className={styles.circle}>
-          <p> {restaurant.name}</p>
-          <p>{restaurant.vicinity}</p>
-          <p>
-            Rating:
-            {restaurant.rating}
-            /5
-          </p>
-          <img src={restaurant.icon} alt="Restaurant picture" />
+        <div className={styles.pagelayout}>
+            <div className={styles.sidebar}>
+                <div className={styles.sideflex}>
+                    <button
+                      className={styles.button}
+                      onClick={() => this.setState({ index: this.state.index + 1 })}
+                    >
+                      Next option
+                    </button>
+                    <button
+                      className={styles.button}
+                      onClick={() => {
+                        console.log("lat" + location.lat + "ja long " + location.long);
+                        this.CurrentLocDir(
+                          location.lat,
+                          location.long,
+                          restaurant.name,
+                          restaurant.vicinity
+                        );
+                      }}
+                    >
+                      Get directions from my current location
+                    </button>
+                    <button
+                      className={styles.button}
+                      onClick={() => {
+                        this.handleClick(restaurant.name, restaurant.vicinity);
+                      }}
+                    >
+                      Get me directions from anywhere!
+                    </button>
+                    <button
+                      className={styles.button}
+                      onClick={() => {
+                        this.AddToFav(restaurant.name);
+                      }}
+                    >
+                      Add to favourites
+                    </button>
+                </div>
+            </div>
+            
+            <div className={styles.main}>
+                <div className={styles.circle}
+                onClick={() => this.setState({ index: this.state.index + 1 })}>
+                  <p> {restaurant.name}</p>
+                  <p>{restaurant.vicinity}</p>
+                  <p>
+                    Rating:
+                    {restaurant.rating}
+                    /5
+                  </p>
+                  <img src={restaurant.icon} alt="Restaurant picture" />
+                </div>
+            </div>
         </div>
       </div>
     );
