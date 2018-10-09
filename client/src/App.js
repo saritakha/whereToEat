@@ -58,7 +58,7 @@ render() {
         <PrivateRoute exact path="/" component={Restaurants} authenticated={this.state.authenticated}/>
         <Route exact path="/login" component={LogIn} />
         <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/logout" component={Logout} />
+        <Route exact path="/logout" component={Logout}/>
       </div>
     </BrowserRouter>
 

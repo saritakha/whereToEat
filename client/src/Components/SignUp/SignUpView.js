@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
 import styles from '../Forms/Forms.css';
 
 const SignUpView = ({ onSubmit }) => {

@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import logo from "./../Img/logo.png";
 import styles from "./Navbar.css";
 import Root from "../../hoc/Root";
-import app from "../../base";
 
 class Navbar extends Component {
 
