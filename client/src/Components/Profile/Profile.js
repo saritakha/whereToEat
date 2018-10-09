@@ -63,40 +63,37 @@ class Profile extends Component {
               <li key={message.id}>{message.text}
               </li>
             )}
-
-            </div>
-
-
-          </ul>
-        </div>
+          </div>
+        </ul>
       </div>
-        );
-        }
+    </div>
+  );
+}
 
-  async changeEmail() {
-    let user = App.auth().currentUser;
-    try {
-      console.log();
-      let res = await user.updateEmail(this.state.email);
-      alert("Updated email to " + this.state.email);
-      console.log(res);
-    } catch (e) {
-      alert("Unable to update email: " + e.message);
-      console.log(e);
-    }
+async changeEmail() {
+  let user = App.auth().currentUser;
+  try {
+    console.log();
+    let res = await user.updateEmail(this.state.email);
+    alert("Updated email to " + this.state.email);
+    console.log(res);
+  } catch (e) {
+    alert("Unable to update email: " + e.message);
+    console.log(e);
   }
+}
 
-  async changePassword() {
-    let user = App.auth().currentUser;
-    try {
-      let res = await user.updatePassword(this.state.password);
-      alert("Updated password to " + this.state.password);
-      console.log(res);
-    } catch (e) {
-      alert("Unable to update password: " + e.message);
-      console.log(e);
-    }
+async changePassword() {
+  let user = App.auth().currentUser;
+  try {
+    let res = await user.updatePassword(this.state.password);
+    alert("Updated password to " + this.state.password);
+    console.log(res);
+  } catch (e) {
+    alert("Unable to update password: " + e.message);
+    console.log(e);
   }
+}
 }
 
 export default Profile;

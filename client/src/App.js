@@ -44,11 +44,9 @@ callApi = async () => {
 
 render() {
   const { authenticated, loading} = this.state;
-
   if (loading) {
     return <p>Loading..</p>;
   }
-
 
   return (
     <BrowserRouter>
@@ -59,7 +57,6 @@ render() {
         <Route exact path="/signup" component={SignUp} />
       </div>
     </BrowserRouter>
-
   );
 }
 }
