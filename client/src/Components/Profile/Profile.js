@@ -2,19 +2,30 @@ import React, { Component } from "react";
 import Navbar from "../Navbar/Navbar";
 import style from "./Profile.css";
 import App from "../../base";
-
 class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: App.auth().currentUser.email,
-      password: ""
+      password: "",
+      favourites:[]
     };
     this.changeEmail = this.changeEmail.bind(this);
     this.changePassword = this.changePassword.bind(this);
   }
-
+  componentWillMount(){
+    let messagesRef = App.database().ref('favourites');
+    messagesRef.on('child_added', snapshot => {
+      let message = { text: snapshot.val(), id: snapshot.key };
+      this.setState({
+        favourites: [...this.state.favourites, message],
+      });
+      console.log(this.state.favourites);
+    })
+  }
   render() {
+    const { favourites} = this.state;
+    console.log("faves " + favourites);
     return (
       <div>
         <Navbar />
@@ -42,6 +53,8 @@ class Profile extends Component {
               }
             />
           </div>
+          <div>Favourites: </div>
+
         </div>
       </div>
     );
@@ -52,8 +65,10 @@ class Profile extends Component {
     try {
       console.log();
       let res = await user.updateEmail(this.state.email);
+      alert("Updated email to " + this.state.email);
       console.log(res);
     } catch (e) {
+      alert("Unable to update email: " + e.message);
       console.log(e);
     }
   }
@@ -62,8 +77,10 @@ class Profile extends Component {
     let user = App.auth().currentUser;
     try {
       let res = await user.updatePassword(this.state.password);
+      alert("Updated password to " + this.state.password);
       console.log(res);
     } catch (e) {
+      alert("Unable to update password: " + e.message);
       console.log(e);
     }
   }
