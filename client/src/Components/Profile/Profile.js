@@ -8,13 +8,25 @@ class Profile extends Component {
     super(props);
     this.state = {
       email: App.auth().currentUser.email,
-      password: ""
+      password: "",
+      favourites:[]
     };
     this.changeEmail = this.changeEmail.bind(this);
     this.changePassword = this.changePassword.bind(this);
   }
-
+  componentWillMount(){
+    let messagesRef = App.database().ref('favourites');
+    messagesRef.on('child_added', snapshot => {
+      let message = { text: snapshot.val(), id: snapshot.key };
+      this.setState({
+        favourites: [...this.state.favourites, message],
+      });
+      console.log(this.state.favourites);
+    })
+  }
   render() {
+    const { favourites} = this.state;
+    console.log("faves " + favourites);
     return (
       <div>
         <Navbar />
@@ -42,6 +54,8 @@ class Profile extends Component {
               }
             />
           </div>
+          <div>Favourites: </div>
+
         </div>
       </div>
     );
