@@ -9,20 +9,43 @@
   outline-offset: -10px;
 }
 
+.input {
+  width: 100%;
+  color: #555555;
+}
+
 .header {
   padding-bottom: 25px;
   color: white;
   font-size: 25px;
 }
 
-.submit {
+.login {
+  padding: 5px;
+}
+
+.login, .signup {
+  margin: 10px;
   color: #555555;
   background-color: white;
   border: none;
   border-radius: 3px;
+  outline: 1px dotted #FF8C42;
+  outline-offset: -2px;
 }
 
-.submit:hover {
+.login:hover {
   background-color: black;
   color: white;
+}
+
+.signup:hover {
+  background-color: #FF8C42;
+  color: white;
+  outline: 1px dotted white;
+  outline-offset: -2px;
+}
+
+.signup {
+  padding: 7px;
 }
