@@ -63,3 +63,12 @@ ul
     border-bottom-right-radius: 1em;
     border-top-right-radius: 1em;
 }
+
+.logoutbutton {
+    background-color: green;
+    border: solid 1px #ffa367;
+    margin: 5px;
+    font-size: 18px;
+    border-radius: 0.3em;
+    
+}

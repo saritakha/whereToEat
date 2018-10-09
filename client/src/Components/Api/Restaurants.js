@@ -96,6 +96,15 @@ export default class Restaurants extends Component {
     );
   };
 
+  logout = () => {
+    app
+      .auth()
+      .signOut()
+      .then()
+      .catch(err => console.log(err));
+  };
+  
+
   render() {
     const { restaurants, isLoading, error } = this.state;
     const location = this.state.location;
@@ -113,6 +122,8 @@ export default class Restaurants extends Component {
       this.setState({ index: (this.state.index = 0) });
 
     console.log(this.state);
+
+    
     return (
       <div>
         <Navbar />
@@ -155,6 +166,10 @@ export default class Restaurants extends Component {
                     >
                       Add to favourites
                     </button>
+                    <button className={styles.logoutbutton}
+                    onClick={this.logout.bind(this)}>
+                    LogOut
+                    </button>
                 </div>
             </div>
             
@@ -168,7 +183,7 @@ export default class Restaurants extends Component {
                     {restaurant.rating}
                     /5
                   </p>
-                  <img src={restaurant.icon} alt="Restaurant picture" />
+                  <img src={restaurant.icon} alt="Restaurant " />
                 </div>
             </div>
         </div>
