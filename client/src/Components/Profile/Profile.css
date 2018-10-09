@@ -101,14 +101,24 @@
 }
 
 .Name {
+
+}
+
+.header {
   color: white;
   font-size: 25px;
 }
 
-.header {
-
+.item {
+  padding: 10px;
 }
 
 .input {
-  
+  width: 80%;
+  color: #555555;
+}
+
+.button {
+  background-color: white;
+  border: none;
 }

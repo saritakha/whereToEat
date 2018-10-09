@@ -37,7 +37,7 @@ class Profile extends Component {
           <div className={style.item}>
             <div>
               Email:
-              <button onClick={this.changeEmail}>Change email</button>
+              <button onClick={this.changeEmail} className={style.button}>Change email</button>
             </div>
             <input
               className= { style.input }
@@ -48,7 +48,7 @@ class Profile extends Component {
           <div className={style.item}>
             <div>
               Password:
-              <button onClick={this.changePassword}>Change password</button>
+              <button onClick={this.changePassword} className={style.button}>Change password</button>
             </div>
             <input
               className= { style.input }
