@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Root from "../../hoc/Root";
 import Navbar from "../Navbar/Navbar";
 import style from "./Profile.css";
 import App from "../../base";
