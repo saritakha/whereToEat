@@ -88,10 +88,18 @@ ul
 }
 
 .logoutbutton {
-    background-color: green;
-    border: solid 1px #ffa367;
+    background-color: #841B1B;
+    border-color: #9c4848;
+    border-style: outset ;
     margin: 5px;
     font-size: 18px;
     border-radius: 0.3em;
+    color: white;
+    text-shadow: 0.8px 0.8px #ff0000;
     
 }
+
+
+.button:hover, .logoutbutton:hover { 
+    transition: all .2s ease-in-out;
+    transform: scale(1.03); }

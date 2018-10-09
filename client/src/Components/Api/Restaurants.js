@@ -130,12 +130,12 @@ export default class Restaurants extends Component {
         <div className={styles.pagelayout}>
             <div className={styles.sidebar}>
                 <div className={styles.sideflex}>
-                    <button
+                   {/*} <button
                       className={styles.button}
                       onClick={() => this.setState({ index: this.state.index + 1 })}
                     >
                       Next option
-                    </button>
+                    </button> */}
                     <button
                       className={styles.button}
                       onClick={() => {
@@ -168,7 +168,7 @@ export default class Restaurants extends Component {
                     </button>
                     <button className={styles.logoutbutton}
                     onClick={this.logout.bind(this)}>
-                    LogOut
+                    Log Out
                     </button>
                 </div>
             </div>
