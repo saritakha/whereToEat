@@ -14,12 +14,52 @@ ul
     margin: auto;
     margin-top: 60px;
     background-color: brown;
+    border: 2px dotted #FF8C42;
+    
+    /*prevents text highlighting*/ 
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    
+    
   }
 
 
 .button {
-    background-color: orange;
-    border: 2px solid orange;
+    background-color: #FF8C42;
+    border: solid 1px #ffa367;
     margin: 5px;
     font-size: 18px;
+    border-radius: 0.3em;
+    
+}
+
+.pagelayout {
+    display: grid;
+    grid-template-areas: "sidebar main . . . ";
+    
+}
+
+.sidebar {
+    grid-area: sidebar;
+    width: 200px;
+    
+    
+}
+
+.main {
+    grid-area: main;
+    align-content: left;
+}
+
+.sideflex{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8em;
+    background-color: rgba(205,206,255,0.3);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 0.5em;
+    border-bottom-right-radius: 1em;
+    border-top-right-radius: 1em;
 }
