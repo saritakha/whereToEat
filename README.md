@@ -4,7 +4,7 @@ The purpose of this project is to create an application for our Software Busines
 
 
 
-# Team No Show members
+# Team No Spice Members
 * [Jenna Kopra](https://github.com/JennaMetro)
 * [Sarita Khanal](https://github.com/saritakha)
 * [Tuan Vu](https://github.com/vuquangtuan)
